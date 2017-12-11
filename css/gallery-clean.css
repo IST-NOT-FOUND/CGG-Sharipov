@@ -1,0 +1,44 @@
+body {
+    background-color: #fff;
+    min-height: 100vh;
+    font: normal 16px sans-serif;
+}
+
+.gallery {
+    padding: 40px;
+}
+
+.gallery .thumbnail {
+    padding: 0;
+    margin-bottom: 30px;
+    border: none;
+}
+
+.gallery img {
+    border-radius: 2px;
+}
+
+.gallery .icon {
+    height: 40px;
+}
+
+.gallery .caption{
+    padding: 26px 30px;
+    text-align: center;
+}
+
+.gallery .caption h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.gallery .caption p {
+    font-size: 13px;
+    color: #323535;
+    margin: 0;
+}
+
+.baguetteBox-button {
+    background-color: transparent !important;
+}
