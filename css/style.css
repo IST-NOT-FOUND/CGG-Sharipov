@@ -1,0 +1,119 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+    color: white;
+    background: #5792C0;
+    background-size: cover;
+    background-position: bottom;
+    padding-bottom: 50px;
+}
+
+.header .navbar {
+    margin-bottom: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+    border-bottom:none;
+    background-color: transparent;
+    min-width: 300px;
+    border: none;
+}
+
+.header .hero {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+.header .hero h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 60px;
+    margin-bottom: 36px;
+}
+
+
+.header .hero p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 22px;
+    max-width: 660px;
+    margin: 0 auto 20px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+.header .btn-primary {
+    color: #fff;
+    background-color: transparent;
+    border-color: #fffbfb !important;
+    outline:none;
+    margin-right: 20px;
+    margin-top: 20px;
+    font-size: 24px;
+    padding: 18px 24px;
+    transition:0.2s background-color;
+}
+
+.header .btn-primary:hover {
+    background-color:rgba(255,255,255,0.1);
+}
+
+.header .btn-primary:active {
+    transform:translateY(1px);
+}
+
+@media screen and (max-width: 767px) {
+    .header .navbar-default .navbar-nav .open .dropdown-menu>li>a{
+        color: #fff;
+        font-size: 16px;
+    }
+    .header .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover{
+        color: #ccc;
+    }
+    .header .navbar-collapse {
+        margin-left: 20px;
+        border-top: none;
+        box-shadow: none;
+    }
+    .header .hero{
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .header .hero h1{
+        font-size: 42px;
+    }
+}
+
+/* Quote Block */
+.quote-block {
+    padding: 50px 0 50px 0;
+}
+/* End Quote Block */
+
+/* Content Block */
+.content-block {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    text-align: center;
+    color: #000;
+    background: #B8D7F0;
+}
+
+.content-block .block{
+    position: relative;
+}
+
+.content-block .linkblock {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.content-block img {
+    height: 40px;
+}
+/* End Content Block */
