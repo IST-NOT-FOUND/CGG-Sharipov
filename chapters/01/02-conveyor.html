@@ -25,14 +25,13 @@
             </div>
         </div>
         <div class="container text-center">
-            <canvas id="canvas3D" width="400" height="300">Ваш браузер не поддерживает элемент canvas</canvas>
+            <canvas id="canvas3D" width="400" height="300">Your brouser doesn't support canvas</canvas>
         </div>
         <script id="shader-fs" type="x-shader/x-fragment">
             void main(void) {
                 gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
             }
         </script>
-        <!-- вершинный шейдер -->
         <script id="shader-vs" type="x-shader/x-vertex">
             attribute vec3 aVertexPosition;
             void main(void) {
