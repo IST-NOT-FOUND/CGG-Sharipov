@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CG&G Laboratory Work #1 - Homework 1</title>
+        <meta charset="utf-8">
+        <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/carousel.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="index.html">Laboratory work #1</a></li>
+            <li class="breadcrumb-item active">Homework 1</li>
+        </ol>
+        <div class="container gallery-container">
+            <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <h1 class="page-title">Task #8</h1>
+                        <p class="page-description text-center">Homework</p>
+                    </div>
+                </div>
+                <a href="07-lines.html" class="left carousel-control"><i class="glyphicon glyphicon-chevron-left"></i></a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-xs-6"></div>
+                <div class="col-lg-4">
+                    <canvas id="canvas3D" width="400" height="300">Ваш браузер не поддерживает элемент canvas</canvas>
+                </div>
+                <div class="col-lg-4 col-xs-6 text-right">
+                    <h2>Actions:</h2>
+                    <h1><a onclick="changeBGColor()" id="btn" class="btn btn-success">Change color</a></h1>
+                </div>
+            </div>
+        </div>
+        <script id="shader-fs" type="x-shader/x-fragment">
+            void main(void) {
+            gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+            }
+        </script>
+        <!-- вершинный шейдер -->
+        <script id="shader-vs" type="x-shader/x-vertex">
+            attribute vec3 aVertexPosition;
+            void main(void) {
+            gl_Position = vec4(aVertexPosition, 1.0);
+            }
+        </script>
+        <script src="../../node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+        <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../../js/chapters/01/08-homework_1.js"></script>
+    </body>
+</html>
