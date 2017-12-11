@@ -42,3 +42,55 @@ function getShader(type,id) {
     }
     return shader;
 }
+
+function initBuffers() {
+    var vertices = [
+        -0.5, -0.5, 0.5,
+        -0.5, 0.5, 0.5,
+        0.5, 0.5, 0.5,
+        0.5, -0.5, 0.5,
+        -0.5, -0.5, -0.5,
+        -0.5, 0.5, -0.5,
+        0.5, 0.5, -0.5,
+        0.5, -0.5, -0.5
+    ];
+
+    var indices = [
+        0, 1, 2,
+        2, 3, 0,
+        0, 4, 7,
+        7, 3, 0,
+        0, 1, 5,
+        5, 4, 0,
+        2, 3, 7,
+        7, 6, 2,
+        2, 1, 6,
+        6, 5, 1,
+        4, 5, 6,
+        6, 7, 4
+    ];
+    
+    vertexBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+    vertexBuffer.itemSize = 3;
+    indexBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indices), gl.STATIC_DRAW);
+    indexBuffer.numberOfItems = indices.length;
+    
+    var сolors = [
+        1.0, 0.0, 0.0,
+        1.0, 1.0, 0.0,
+        1.0, 1.0, 0.0,
+        1.0, 1.0, 1.0,
+
+        1.0, 0.0, 0.0,
+        1.0, 1.0, 0.0,
+        1.0, 1.0, 0.0,
+        1.0, 1.0, 1.0
+    ];
+    colorBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(сolors), gl.STATIC_DRAW);
+}
