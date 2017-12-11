@@ -51,3 +51,7 @@ function init(){
     gl.viewport(0, 0, canvas.width, canvas.height);
     gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT, 0);
 };
+
+function changeBGColor() {
+    init();
+};
