@@ -39,3 +39,9 @@ function animateCube() {
 function stop() {
     cancelAnimationFrame(request);
 }
+
+function start() {
+    request = requestAnimationFrame(start);
+    mesh.rotation.y += k;
+    renderer.render(scene, camera);
+}
