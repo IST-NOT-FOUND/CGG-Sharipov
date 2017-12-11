@@ -45,3 +45,12 @@ function start() {
     mesh.rotation.y += k;
     renderer.render(scene, camera);
 }
+
+function rotateLeft() {
+    if (isAnimated) {
+        if (isRight === true) {
+            isRight = false;
+            k = -0.05;
+        }
+    }
+}
