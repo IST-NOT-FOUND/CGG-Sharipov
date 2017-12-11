@@ -30,3 +30,43 @@ function getShader(type, id) {
     }
     return shader;
 }
+
+function initBuffers() {
+    vertices = [
+        -0.2, 0.5, 0.0,
+        -0.2, -0.5, 0.0,
+        0.2, 0.5, 0.0,
+        0.2, -0.5, 0.0,
+        
+        -0.7, -0.5, 0.0,
+        -0.7, 0.5, 0.0,
+        -0.3, 0.5, 0.0,
+        
+        0.6, 0.5, 0.0,
+        0.3, 0.5, 0.0,
+        0.3, -0.5, 0.0,
+        0.6, -0.5, 0.0
+    ];
+    
+    indices1 = [0, 1, 1, 2, 2, 3];
+    indices2 = [4, 5, 5, 6];
+    indices3 = [7, 8, 8, 9, 9, 10];
+
+    vertexBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+    vertexBuffer.itemSize = 3;
+    indexBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indices1), gl.STATIC_DRAW);
+    indexBuffer.numberOfItems = indices1.length;
+    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    draw();
+    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indices2), gl.STATIC_DRAW);
+    indexBuffer.numberOfItems = indices2.length;
+    draw();
+    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indices3), gl.STATIC_DRAW);
+    indexBuffer.numberOfItems = indices3.length;
+    draw();
+}
