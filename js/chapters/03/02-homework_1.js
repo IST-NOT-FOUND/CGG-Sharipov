@@ -129,3 +129,13 @@ function init() {
         draw();
   }, 10);
 }
+
+function changeCol(v, tempV) {
+    if (v > tempV){
+        return -0.01;
+    } else if (v === tempV) {
+        return 0;
+    } else {
+        return 0.01;
+    }
+}
