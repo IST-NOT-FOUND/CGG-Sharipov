@@ -121,3 +121,11 @@ window.onload = function () {
         init();
     }
 };
+
+function init() {
+    var timer = setInterval(function() {
+        initShaders();
+        initBuffers();
+        draw();
+  }, 10);
+}
