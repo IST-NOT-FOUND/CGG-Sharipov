@@ -105,3 +105,20 @@ window.onload = function(){
         })();
     }
 };
+
+function handleKeyDown(e){
+    switch(e.keyCode) {
+        case 39:
+            angle += 0.1;
+            break;
+        case 37:
+            angle -= 0.1;
+            break;
+        case 40:
+            zTranslation += 0.1;
+            break;
+        case 38:
+            zTranslation -= 0.1;
+            break;
+    }
+}
