@@ -82,3 +82,26 @@ function setupWebGL() {
     mat4.translate(mvMatrix,mvMatrix,[0, 0, zTranslation]);
     mat4.rotate(mvMatrix,mvMatrix, angle, [0, 1, 0]);
 }
+
+window.onload = function(){
+
+    var canvas = document.getElementById("canvas3D");
+    try {
+        gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+    } catch(e) {}
+    if (!gl) {
+        alert("Your browser doesn't support WebGL");
+    } if(gl){
+        document.addEventListener('keydown', handleKeyDown, false);
+        gl.viewportWidth = canvas.width;
+        gl.viewportHeight = canvas.height;
+        initShaders();
+        initBuffers();
+        (function animloop(){
+            setupWebGL();
+            setMatrixUniforms();
+            draw();
+            requestAnimFrame(animloop, canvas);
+        })();
+    }
+};
