@@ -55,3 +55,7 @@ function init(){
 function changeBGColor() {
     init();
 };
+
+function getRandomValue(min, max) {
+    return (Math.random() * (max - min) + min) / 100;
+}
