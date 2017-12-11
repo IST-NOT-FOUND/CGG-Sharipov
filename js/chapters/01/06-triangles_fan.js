@@ -28,3 +28,17 @@ function getShader(type,id) {
     }
     return shader;  
 }
+
+function initBuffers() {
+    vertices =[ 0.0,  0.5,  0.0,
+       -0.5,  -0.4,  0.0,
+       -0.2,  -0.5,  0.0,
+       0.2,  -0.5,  0.0,
+       0.5,  -0.4,  0.0
+       ];
+  vertexBuffer = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+  vertexBuffer.itemSize = 3;
+  vertexBuffer.numberOfItems=5;
+}
