@@ -54,3 +54,12 @@ function rotateLeft() {
         }
     }
 }
+
+function rotateRight() {
+    if (isAnimated) {
+        if (isRight === false) {
+            isRight = true;
+            k = 0.05;
+        }
+    }
+}
