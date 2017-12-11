@@ -23,3 +23,8 @@ function initShaders() {
     shaderProgram.MVMatrix = gl.getUniformLocation(shaderProgram, "uMVMatrix");
     shaderProgram.ProjMatrix = gl.getUniformLocation(shaderProgram, "uPMatrix");
 }
+
+function setMatrixUniforms(){
+    gl.uniformMatrix4fv(shaderProgram.ProjMatrix,false, pMatrix);
+    gl.uniformMatrix4fv(shaderProgram.MVMatrix, false, mvMatrix);
+}
