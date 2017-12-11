@@ -35,3 +35,7 @@ function animateCube() {
         start();
     }
 }
+
+function stop() {
+    cancelAnimationFrame(request);
+}
