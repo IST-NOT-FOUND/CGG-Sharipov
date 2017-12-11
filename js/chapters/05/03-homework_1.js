@@ -22,3 +22,16 @@ function init() {
     document.getElementsByClassName("canvas")[0].appendChild(renderer.domElement);
     renderer.render(scene, camera);
 }
+
+function animateCube() {
+    if (isAnimated === true) {
+        isAnimated = false;
+        document.getElementById("btnAnimate").innerHTML = "Start";
+        stop();
+        
+    } else {
+        isAnimated = true;
+        document.getElementById("btnAnimate").innerHTML = "Stop";
+        start();
+    }
+}
