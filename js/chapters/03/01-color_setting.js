@@ -73,7 +73,7 @@ window.onload = function () {
         gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
     } catch (e) {}
     if (!gl) {
-        alert("Your brouser doesn't support WebGL");
+        alert("Your browser doesn't support WebGL");
     }
     if (gl) {
         gl.viewportWidth = canvas.width;

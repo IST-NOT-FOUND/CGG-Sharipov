@@ -63,7 +63,7 @@ window.onload = function () {
     } catch (e) {}
 
     if (!gl) {
-        alert("Your brouser doesn't support WebGL");
+        alert("Your browser doesn't support WebGL");
     } if (gl) {
         gl.viewportWidth = canvas.width;
         gl.viewportHeight = canvas.height;
