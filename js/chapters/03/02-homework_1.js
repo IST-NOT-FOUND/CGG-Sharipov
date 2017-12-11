@@ -40,3 +40,54 @@ function getShader(type, id) {
     }
     return shader;
 }
+
+function initBuffers() {
+    var vertices = [
+        0.0, 0.5, 0.0,
+        -0.5, -0.5, 0.0,
+        0.5, -0.5, 0.0
+    ];
+    vertexBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+    vertexBuffer.itemSize = 3;
+    vertexBuffer.numberOfItems = 3;
+    if (k % 100 === 0) {
+        tempV1R = v1r;
+        tempV2R = v2r;
+        tempV3R = v3r;
+
+        tempV1G = v1g;
+        tempV2G = v2g;
+        tempV3G = v3g;
+
+        tempV1B = v1b;
+        tempV2B = v2b;
+        tempV3B = v3b;
+        k = 1;
+    }
+
+    v1r += changeCol(v1r, tempV3R);
+    v2r += changeCol(v2r, tempV1R);
+    v3r += changeCol(v3r, tempV2R);
+    v1g += changeCol(v1g, tempV3G);
+    v2g += changeCol(v2g, tempV1G);
+    v3g += changeCol(v3g, tempV2G);
+    v1b += changeCol(v1b, tempV3B);
+    v2b += changeCol(v2b, tempV1B);
+    v3b += changeCol(v3b, tempV2B);
+
+    k++;
+
+    var сolors = [
+        v1r, v1g, v1b,
+        v2r, v2g, v2b,
+        v3r, v3g, v3b,
+        v3r, v3g, v3b,
+        v1r, v1g, v1b
+    ];
+    
+    colorBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(сolors), gl.STATIC_DRAW);
+}
