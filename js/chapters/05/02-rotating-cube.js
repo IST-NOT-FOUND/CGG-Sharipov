@@ -65,3 +65,10 @@ function initBuffers() {
     gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indices), gl.STATIC_DRAW);
     indexBuffer.numberOfItems = indices.length;
 }
+
+function draw() {
+    gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute,
+        vertexBuffer.itemSize, gl.FLOAT, false, 0, 0);
+
+    gl.drawElements(gl.LINES, indexBuffer.numberOfItems, gl.UNSIGNED_SHORT,0);
+}
