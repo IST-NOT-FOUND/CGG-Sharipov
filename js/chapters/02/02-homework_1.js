@@ -70,3 +70,10 @@ function initBuffers() {
     indexBuffer.numberOfItems = indices3.length;
     draw();
 }
+
+function draw() {
+    gl.viewport(0, 0, gl.viewportWidth, gl.viewportHeight);
+    gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute,
+            vertexBuffer.itemSize, gl.FLOAT, false, 0, 0);
+    gl.drawElements(gl.LINES, indexBuffer.numberOfItems, gl.UNSIGNED_SHORT, 0);
+}
