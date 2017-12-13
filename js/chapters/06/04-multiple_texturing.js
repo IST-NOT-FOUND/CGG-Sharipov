@@ -180,3 +180,17 @@ function initRoofBuffers() {
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(textureCoords), gl.STATIC_DRAW);
     roofTextureCoordsBuffer.itemSize=2;
 }
+
+function wallDraw() {
+
+    gl.bindBuffer(gl.ARRAY_BUFFER, wallVertexBuffer);
+    gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute,
+        wallVertexBuffer.itemSize, gl.FLOAT, false, 0, 0);
+    gl.bindBuffer(gl.ARRAY_BUFFER, wallTextureCoordsBuffer);
+    gl.vertexAttribPointer(shaderProgram.vertexTextureAttribute,
+        wallTextureCoordsBuffer.itemSize, gl.FLOAT, false, 0, 0);
+    gl.activeTexture(gl.TEXTURE0);
+    gl.bindTexture(gl.TEXTURE_2D, wallTexture);
+    gl.enable(gl.DEPTH_TEST);
+    gl.drawElements(gl.TRIANGLES, wallIndexBuffer.numberOfItems, gl.UNSIGNED_SHORT,0);
+}
