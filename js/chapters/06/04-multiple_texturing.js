@@ -217,3 +217,10 @@ function setupWebGL() {
     mat4.translate(mvMatrix,mvMatrix,[0, 0, zTranslation]);
     mat4.rotate(mvMatrix,mvMatrix, angle, [0, 1, 0]);
 }
+
+function setupTextures() {
+    wallTexture = gl.createTexture();
+    setTexture("../../src/images/texture/lead.png", wallTexture);
+    roofTexture = gl.createTexture();
+    setTexture("../../src/images/texture/red.png", roofTexture);
+}
