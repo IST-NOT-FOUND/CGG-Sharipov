@@ -56,3 +56,9 @@ function draw() {
         vertexBuffer.itemSize, gl.FLOAT, false, 0, 0);
     gl.drawElements(gl.TRIANGLES, indexBuffer.numberOfItems, gl.UNSIGNED_SHORT,0);
 }
+
+function setupWebGL() {
+    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    gl.clear(gl.COLOR_BUFFER_BIT || gl.DEPTH_BUFFER_BIT);
+    gl.viewport(0, 0, gl.viewportWidth, gl.viewportHeight);
+}
