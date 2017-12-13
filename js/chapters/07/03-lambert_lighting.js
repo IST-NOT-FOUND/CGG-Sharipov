@@ -171,3 +171,26 @@ window.onload = function(){
         })();
     }
 };
+
+function handleKeyDown(e){
+    switch(e.keyCode) {
+        case 39:
+            yAngle += 0.1;
+            break;
+        case 37:
+            yAngle -= 0.1;
+            break;
+        case 40:
+            xAngle += 0.1;
+            break;
+        case 38:
+            xAngle -= 0.1;
+            break;
+        case 83:
+            zTranslation += 0.1;
+            break;
+        case 87:
+            zTranslation -= 0.1;
+            break;
+    }
+}
