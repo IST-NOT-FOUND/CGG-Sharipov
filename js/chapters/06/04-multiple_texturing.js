@@ -50,3 +50,74 @@ function getShader(type,id) {
     }
     return shader;
 }
+
+function initWallBuffers() {
+    var vertices = [
+        -0.8, -0.5, 0.5,
+        -0.8, 0.5, 0.5,
+        -0.4, 0.5, 0.5,
+        -0.4, -0.5, 0.5,
+        -0.8, -0.5, 0.0,
+        -0.8, 0.5, 0.0,
+        -0.4, 0.5, 0.0,
+        -0.4, -0.5, 0.0,
+        -0.8, -0.5, 0.5,
+        -0.8, 0.5, 0.5,
+        -0.8, 0.5, 0.0,
+        -0.8, -0.5, 0.0,
+        -0.4, -0.5, 0.5,
+        -0.4, 0.5, 0.5,
+        -0.4, 0.5, 0.0,
+        -0.4, -0.5, 0.0,
+        0.8, -0.5, 0.5,
+        0.8, 0.5, 0.5,
+        0.4, 0.5, 0.5,
+        0.4, -0.5, 0.5,
+        0.8, -0.5, 0.0,
+        0.8, 0.5, 0.0,
+        0.4, 0.5, 0.0,
+        0.4, -0.5, 0.0,
+        0.8, -0.5, 0.5,
+        0.8, 0.5, 0.5,
+        0.8, 0.5, 0.0,
+        0.8, -0.5, 0.0,
+        0.4, -0.5, 0.5,
+        0.4, 0.5, 0.5,
+        0.4, 0.5, 0.0,
+        0.4, -0.5, 0.0
+    ];
+    var indices = [
+        0, 1, 2,
+        2, 3, 0,
+        4, 5, 6,
+        6, 7, 4,
+        8, 9, 10,
+        10, 11, 8,
+        12, 13, 14,
+        14, 15, 12,
+        16, 17, 18,
+        18, 19, 16,
+        20, 21, 22,
+        22, 23, 20,
+        24, 25, 26,
+        26, 27, 24,
+        28, 29, 30,
+        30, 31, 28
+    ];
+    wallVertexBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, wallVertexBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+    wallVertexBuffer.itemSize = 3;
+    wallIndexBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, wallIndexBuffer);
+    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indices), gl.STATIC_DRAW);
+    wallIndexBuffer.numberOfItems = indices.length;
+    var textureCoords = [];
+    for (var i=0; i<8; i++) {
+        textureCoords.push(0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0);
+    }
+    wallTextureCoordsBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, wallTextureCoordsBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(textureCoords), gl.STATIC_DRAW);
+    wallTextureCoordsBuffer.itemSize=2;
+}
