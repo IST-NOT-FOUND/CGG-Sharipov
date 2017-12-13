@@ -50,3 +50,10 @@ function setupMaterials() {
     gl.uniform3fv(shaderProgram.uniformDiffuseMaterialColor, [0.7, 0.7, 0.7]);
     gl.uniform3fv(shaderProgram.uniformSpecularMaterialColor, [1.0, 1.0, 1.0]);
 }
+
+function setMatrixUniforms(){
+
+    gl.uniformMatrix4fv(shaderProgram.ProjMatrix,false, pMatrix);
+    gl.uniformMatrix4fv(shaderProgram.MVMatrix, false, mvMatrix);
+    gl.uniformMatrix3fv(shaderProgram.NormalMatrix, false, nMatrix);
+}
