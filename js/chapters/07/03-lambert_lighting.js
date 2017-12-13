@@ -38,3 +38,7 @@ function setupLights() {
     gl.uniform3fv(shaderProgram.uniformLightPosition, [0.0, 10.0, 5.0]);
     gl.uniform3fv(shaderProgram.uniformDiffuseLightColor, [1.0,1.0,1.0]);
 }
+
+function setupMaterials() {
+    gl.uniform3fv(shaderProgram.uniformDiffuseMaterialColor, [0.0, 1.0, 1.0]);
+}
