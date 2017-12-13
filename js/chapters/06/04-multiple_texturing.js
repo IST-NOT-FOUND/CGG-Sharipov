@@ -224,3 +224,14 @@ function setupTextures() {
     roofTexture = gl.createTexture();
     setTexture("../../src/images/texture/red.png", roofTexture);
 }
+
+function setTexture(url, texture){
+    gl.bindTexture(gl.TEXTURE_2D, texture);
+    var image = new Image();
+    image.onload = function() {
+        handleTextureLoaded(image, texture);
+    };
+    image.src = url;
+    shaderProgram.samplerUniform = gl.getUniformLocation(shaderProgram, "uSampler");
+    gl.uniform1i(shaderProgram.samplerUniform, 0);
+}
