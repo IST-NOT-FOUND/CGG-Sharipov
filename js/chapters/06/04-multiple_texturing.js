@@ -194,3 +194,16 @@ function wallDraw() {
     gl.enable(gl.DEPTH_TEST);
     gl.drawElements(gl.TRIANGLES, wallIndexBuffer.numberOfItems, gl.UNSIGNED_SHORT,0);
 }
+
+function roofDraw() {
+    gl.bindBuffer(gl.ARRAY_BUFFER, roofVertexBuffer);
+    gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute,
+        roofVertexBuffer.itemSize, gl.FLOAT, false, 0, 0);
+    gl.bindBuffer(gl.ARRAY_BUFFER, roofTextureCoordsBuffer);
+    gl.vertexAttribPointer(shaderProgram.vertexTextureAttribute,
+        roofTextureCoordsBuffer.itemSize, gl.FLOAT, false, 0, 0);
+    gl.activeTexture(gl.TEXTURE0);
+    gl.bindTexture(gl.TEXTURE_2D, roofTexture);
+    gl.enable(gl.DEPTH_TEST);
+    gl.drawElements(gl.TRIANGLES, roofIndexBuffer.numberOfItems, gl.UNSIGNED_SHORT,0);
+}
