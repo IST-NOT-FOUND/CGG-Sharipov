@@ -130,3 +130,15 @@ function setupWebGL() {
     mat4.translate(mvMatrix,mvMatrix,[0, 0, zTranslation]);
     mat4.rotate(mvMatrix,mvMatrix, angle, [0, 1, 0]);
 }
+
+function setTextures(){
+    texture = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, texture);
+    var image = new Image();
+    image.onload = function() {
+        handleTextureLoaded(image, texture);
+    };
+    image.src = "../../src/images/texture/earth.png";
+    shaderProgram.samplerUniform = gl.getUniformLocation(shaderProgram, "uSampler");
+    gl.uniform1i(shaderProgram.samplerUniform, 0);
+}
