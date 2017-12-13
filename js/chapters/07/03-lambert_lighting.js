@@ -33,3 +33,8 @@ function initShaders() {
     shaderProgram.uniformDiffuseLightColor = gl.getUniformLocation(shaderProgram, "uDiffuseLightColor");
     shaderProgram.uniformDiffuseMaterialColor = gl.getUniformLocation(shaderProgram, "uDiffuseMaterialColor");
 }
+
+function setupLights() {
+    gl.uniform3fv(shaderProgram.uniformLightPosition, [0.0, 10.0, 5.0]);
+    gl.uniform3fv(shaderProgram.uniformDiffuseLightColor, [1.0,1.0,1.0]);
+}
