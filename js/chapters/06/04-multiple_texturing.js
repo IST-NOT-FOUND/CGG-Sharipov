@@ -121,3 +121,62 @@ function initWallBuffers() {
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(textureCoords), gl.STATIC_DRAW);
     wallTextureCoordsBuffer.itemSize=2;
 }
+
+function initRoofBuffers() {
+    var vertices = [
+        -1.0, 0.5, 0.5,
+        -1.0, 0.8, 0.5,
+        1.0, 0.8, 0.5,
+        1.0, 0.5, 0.5,
+        -1.0, 0.5, 0.0,
+        -1.0, 0.8, 0.0,
+        1.0, 0.8, 0.0,
+        1.0, 0.5, 0.0,
+        -1.0, 0.5, 0.5,
+        -1.0, 0.8, 0.5,
+        -1.0, 0.8, 0.0,
+        -1.0, 0.5, 0.0,
+        1.0, 0.5, 0.5,
+        1.0, 0.8, 0.5,
+        1.0, 0.8, 0.0,
+        1.0, 0.5, 0.0,
+        -1.0, 0.5, 0.5,
+        -1.0, 0.5, 0.0,
+        1.0, 0.5, 0.0,
+        1.0, 0.5, 0.5,
+        -1.0, 0.8, 0.5,
+        -1.0, 0.8, 0.0,
+        1.0, 0.8, 0.0,
+        1.0, 0.8, 0.5
+    ];
+    var indices = [
+        0, 1, 2,
+        2, 3, 0,
+        4, 5, 6,
+        6, 7, 4,
+        8, 9, 10,
+        10, 11, 8,
+        12, 13, 14,
+        14, 15, 12,
+        16, 17, 18,
+        18, 19, 16,
+        20, 21, 22,
+        22, 23, 20
+    ];
+    roofVertexBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, roofVertexBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+    roofVertexBuffer.itemSize = 3;
+    roofIndexBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, roofIndexBuffer);
+    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(indices), gl.STATIC_DRAW);
+    roofIndexBuffer.numberOfItems = indices.length;
+    var textureCoords = [];
+    for (var i=0; i<6; i++) {
+        textureCoords.push(0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0);
+    }
+    roofTextureCoordsBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, roofTextureCoordsBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(textureCoords), gl.STATIC_DRAW);
+    roofTextureCoordsBuffer.itemSize=2;
+}
