@@ -57,3 +57,16 @@ function setMatrixUniforms(){
     gl.uniformMatrix4fv(shaderProgram.MVMatrix, false, mvMatrix);
     gl.uniformMatrix3fv(shaderProgram.NormalMatrix, false, nMatrix);
 }
+
+function getShader(type,id) {
+    var source = document.getElementById(id).innerHTML;
+    var shader = gl.createShader(type);
+    gl.shaderSource(shader, source);
+    gl.compileShader(shader);
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+        alert("Shader compilation error: " + gl.getShaderInfoLog(shader));
+        gl.deleteShader(shader);
+        return null;
+    }
+    return shader;
+}
