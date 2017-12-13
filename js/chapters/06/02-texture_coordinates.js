@@ -80,3 +80,15 @@ function setupWebGL() {
     gl.clear(gl.COLOR_BUFFER_BIT || gl.DEPTH_BUFFER_BIT);
     gl.viewport(0, 0, gl.viewportWidth, gl.viewportHeight);
 }
+
+function setTextures() {
+    texture = gl.createTexture();
+    gl.bindTexture(gl.TEXTURE_2D, texture);
+    var image = new Image();
+    image.onload = function() {
+        handleTextureLoaded(image, texture);
+    };
+    image.src = "../../src/images/texture/lava.png";
+    shaderProgram.samplerUniform = gl.getUniformLocation(shaderProgram, "uSampler");
+    gl.uniform1i(shaderProgram.samplerUniform, 0);
+}
