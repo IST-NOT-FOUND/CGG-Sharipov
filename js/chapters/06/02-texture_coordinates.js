@@ -101,3 +101,25 @@ function handleTextureLoaded(image, texture) {
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
     gl.bindTexture(gl.TEXTURE_2D, null);
 }
+
+window.onload = function(){
+    var canvas = document.getElementById("canvas3D");
+    try {
+        gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+    } catch(e) {}
+
+    if (!gl) {
+        alert("Your browser doesn't support WebGL");
+    } if(gl){
+        gl.viewportWidth = canvas.width;
+        gl.viewportHeight = canvas.height;
+        initShaders();
+        initBuffers();
+        setTextures();
+        (function animloop() {
+            setupWebGL();
+            draw();
+            requestAnimFrame(animloop, canvas);
+        })();
+    }
+};
