@@ -106,3 +106,17 @@ function initBuffers() {
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(textureCoords), gl.STATIC_DRAW);
     textureCoordsBuffer.itemSize=2;
 }
+
+function draw() {
+
+    gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+    gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute,
+        vertexBuffer.itemSize, gl.FLOAT, false, 0, 0);
+    gl.bindBuffer(gl.ARRAY_BUFFER, textureCoordsBuffer);
+    gl.vertexAttribPointer(shaderProgram.vertexTextureAttribute,
+        textureCoordsBuffer.itemSize, gl.FLOAT, false, 0, 0);
+    gl.activeTexture(gl.TEXTURE0);
+    gl.bindTexture(gl.TEXTURE_2D, texture);
+    gl.enable(gl.DEPTH_TEST);
+    gl.drawElements(gl.TRIANGLES, indexBuffer.numberOfItems, gl.UNSIGNED_SHORT,0);
+}
