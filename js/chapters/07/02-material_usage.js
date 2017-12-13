@@ -44,3 +44,9 @@ function setupLights() {
     gl.uniform3fv(shaderProgram.uniformDiffuseLightColor, [0.7, 0.7, 0.7]);
     gl.uniform3fv(shaderProgram.uniformSpecularLightColor, [1.0, 1.0, 1.0]);
 }
+
+function setupMaterials() {
+    gl.uniform3fv(shaderProgram.uniformAmbientMaterialColor, [0.0, 1.0, 0.0]);
+    gl.uniform3fv(shaderProgram.uniformDiffuseMaterialColor, [0.7, 0.7, 0.7]);
+    gl.uniform3fv(shaderProgram.uniformSpecularMaterialColor, [1.0, 1.0, 1.0]);
+}
