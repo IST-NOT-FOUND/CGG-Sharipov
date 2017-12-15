@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>CG&amp;G Laboratory Work #6 - Multiple texturing</title>
+        <meta charset="utf-8">
+        <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/carousel.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../../index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="index.html">Laboratory work #6</a></li>
+            <li class="breadcrumb-item active">Homework 1</li>
+        </ol>
+        <div class="container gallery-container">
+            <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <h1 class="page-title">Task #5</h1>
+                        <p class="page-description text-center">Homework</p>
+                    </div>
+                </div>
+                <a href="04-multiple_texturing.html" class="left carousel-control"><i class="glyphicon glyphicon-chevron-left"></i></a>
+            </div>
+        </div>
+        <div class="container text-center">
+            <div class="form-group">
+                <label for="textureList">Select list:</label>
+                <select onchange="main()" class="form-control" id="textureList">
+                    <option value="../../src/images/texture/wood.jpg">Wood</option>
+                    <option value="../../src/images/texture/mlava.gif">Lava</option>
+                    <option value="../../src/images/texture/stone.jpg">Stone</option>
+                </select>
+            </div>
+            <canvas id="glcanvas" width="400" height="300">Your browser doesn't support canvas</canvas>
+        </div>
+
+        <script src="../../node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+        <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../../js/three.min.js" type="text/javascript"></script>
+        <script src="../../js/gl-matrix-min.js" type="text/javascript"></script>
+        <script src="../../js/chapters/06/05-homework_1.js" type="text/javascript"></script>
+    </body>
+</html>
