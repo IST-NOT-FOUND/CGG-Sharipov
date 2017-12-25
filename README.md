@@ -4,6 +4,9 @@
 
 # Laboratory work in computer graphics and geometry
 
+## Live demo
+[Click to look -> cgg-q.bitballoon.com](http://cgg-q.bitballoon.com/index.html)
+
 ## Quick start
 
 - Clone the repo: `git clone https://github.com/IST-NOT-FOUND/CGG-Sharipov.git`
